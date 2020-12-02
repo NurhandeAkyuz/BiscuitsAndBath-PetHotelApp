@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap" rel="stylesheet">
+
+    <title>My Reservations</title>
+        <style>
+        body {
+            font-family: 'Lora', serif !important;
+        }
+        .gradient {
+            background: linear-gradient(#b58d32, #e1c64d, #c8a03a, #8f763d, #fbe8a0);
+        }
+        .bg-gold {
+            background-color: #fcda69 !important;
+        }
+        .bg-white {
+            background-color: #ffffff;
+        }
+        .gradient2 {
+            background: linear-gradient(#dcdde0, #cdd3da, #abacaf, #e8e9e9, #9a9a9b);
+        }
+        .bg-black {
+            background-color: #000000 !important;
+        }
+        .bg-softblack {
+            background-color: #000000d9 !important;
+        }
+        .py-6 {
+            padding: 150px 0px;
+        }
+        ul {
+            list-style: none;
+        }
+        ul li1:before {
+            content: '✓ ';
+        }
+        .input-grp {
+            width: 270px;
+            display: inline-block;
+        }
+        .input-grp {
+            width: 270px;
+            display: inline-block;
+        }
+        .input-grp label {
+            color: #ffffff;
+        }
+        .form-control {
+            font-size: 12px;
+            color: #000000;
+            background-color: #ffffff;
+            box-shadow: none !important;
+        }
+        .bg-grey {
+            background-color: #e8e9e9;
+        }
+        .box{
+            width: 520px;
+            padding: 40px;
+            font-family: 'Lora', serif;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: #000000;
+            text-align: center;
+        }
+        .box h1{
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+    </style>
+
+    <nav class="navbar navbar-dark bg-black navbar-expand-lg text-white sticky-top">
+        <div class="container py-2">
+            <a href="/home_page" class="navbar-brand">Biscuits and Bath</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item px-4">
+                    <a href="/home_page" class="nav-link text-white">Home</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a href="/linaccommodation" class="nav-link text-white">Accommodations</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a href="/reservation" class="nav-link text-white">Reservation</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a href="/myreservations" class="nav-link text-white" style="text-align: center">My Reservations</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a href="/lincontact" class="nav-link text-white">Contact</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a href="/logged_out" class="nav-link text-white">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="bg-black py-6">
+        <div class="container text-white text-center">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    {% if room_selection%}
+                        <h3>{{ available_rooms[room_selection] }} rooms are available for reservation!</h3>
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-13">
+                        <img src="https://www.holidaysundirect.com/wp-content/uploads/2018/11/dog-400x333@2x.jpg" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gradient2 py-6">
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 style="color: #ffffff">My Reservations</h1>
+                </div>
+                <div class="col-md-6">
+                    <h6>
+                        <ul>
+                            <li style="color: #000000">Room Type           :     {{ room_selection }}</li>
+                            <li style="color: #000000">Check-in Date       :     {{ check_in_date }}</li>
+                            <li style="color: #000000">Check-out Date      :     {{ check_out_date }}</li>
+                            <li style="color: #000000">Number of Pets      :     {{ number_of_pets }}</li>
+                            <li style="color: #000000">Number of Rooms     :     {{ number_of_rooms }}</li>
+                            <li style="color: #000000">Total Cost          :     {{ count_night[room_selection] }} $</li>
+                        </ul>
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gradient2 py-6">
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="box">
+                    <form action="/myreservations" method="POST">
+                        <h1>Make a Reservation</h1>
+                            <div class="input-grp">
+                                <label>Room Type</label>
+                                <input class="form-control" name="room_type" value={{ room_selection }}>
+                            </div>
+                        <div class="input-grp">
+                            <label>Check in</label>
+                            <input type="date" name="check_in_date" class="form-control" value={{ check_in_date }}>
+                        </div>
+                        <div class="input-grp">
+                            <label>Check out</label>
+                            <input type="date" name="check_out_date" class="form-control" value={{ check_out_date }}>
+                        </div> <p> </p>
+                        <div class="input-grp">
+                            <label>Rooms</label>
+                            <input type="number" class="form-control" name="number_of_rooms" value={{ number_of_rooms }}>
+                        </div>
+                        <div class="input-grp">
+                            <label>Pets</label>
+                            <input type="number" class="form-control" name="number_of_pets" value={{ number_of_pets }}>
+                        </div><p> </p>
+                        <div class="input-grp">
+                            <button type="submit" class="btn bg-grey flight">Make a Reservation</button>
+                        </div>
+                    </form>
+                </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-15">
+                        <img src="https://s3.amazonaws.com/petcentral.com/wp-content/uploads/2019/07/22160617/dog-hotel-article.jpg" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-4 text-white">
+        <div class="container" style="text-align: center">
+            © 2017 Biscuits and Bath All rights reserved.
+            <p></p>
+            Privacy Policy - Cookies Policy
+        </div>
+    </footer>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap" rel="stylesheet">
+
+    <title>Accommodations</title>
+        <style>
+        body {
+            font-family: 'Lora', serif !important;
+        }
+        .gradient {
+            background: linear-gradient(#b58d32, #e1c64d, #c8a03a, #8f763d, #fbe8a0);
+        }
+        .bg-gold {
+            background-color: #fcda69 !important;
+        }
+        .bg-white {
+            background-color: #ffffff;
+        }
+        .gradient2 {
+            background: linear-gradient(#dcdde0, #cdd3da, #abacaf, #e8e9e9, #9a9a9b);
+        }
+        .bg-black {
+            background-color: #000000 !important;
+        }
+        .bg-softblack {
+            background-color: #000000d9 !important;
+        }
+        .py-6 {
+            padding: 150px 0px;
+        }
+        ul {
+            list-style: none;
+        }
+        ul li1:before {
+            content: '✓ ';
+        }
+    </style>
+
+    <nav class="navbar navbar-dark bg-softblack navbar-expand-lg text-white sticky-top">
+        <div class="container py-2">
+            <a href="/home_page" class="navbar-brand">Biscuits and Bath</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item px-4">
+                    <a href="/home_page" class="nav-link text-white">Home</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a href="/linaccommodation" class="nav-link text-white">Accommodations</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a href="/reservation" class="nav-link text-white">Reservation</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a href="/myreservations" class="nav-link text-white" style="text-align: center">My Reservations</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a href="/lincontact" class="nav-link text-white">Contact</a>
+                </li>
+                <li class="nav-item px-4">
+                    <a href="/logged_out" class="nav-link text-white">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="gradient2 py-6">
+                <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5 offset-md-1 text-black">
+                    {{ check_in_date }}
+
+                    <ul>
+                        <li1>Available for both dog and cat bookings</li1><p></p>
+                        <li1>50 square feet</li1><p></p>
+                        <li1>Custom private room</li1><p></p>
+                        <li1>42” HD flat screen TV</li1><p></p>
+                        <li1>24/7 web cam access</li1><p></p>
+                        <li1>Luxury amenities</li1><p></p>
+                        <li1>Pendulum lighting</li1><p></p>
+                        <li1>Daycare included, or Day Stay is available for an additional fee</li1>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-15 text-center">
+                        <h3> Zen Suite </h3> <p> </p>
+                        <img src="https://www.poshpethotel.com/wp-content/uploads/2014/09/Zen-Room-Posh-Pet-Hotel.jpg" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-black py-6">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="col-md-15 text-white text-center">
+                        <h3> Royal Suite </h3> <p> </p>
+                        <img src="https://www.poshpethotel.com/wp-content/uploads/2014/09/royal-suite-1.jpg" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-1 text-white">
+                    <ul>
+                        <li1>Available for both dog and cat bookings</li1><p></p>
+                        <li1>64 square feet</li1><p></p>
+                        <li1>Premium memory foam mattress</li1><p></p>
+                        <li1>39” HD flat screen TV per suite</li1><p></p>
+                        <li1>24/7 web cam access</li1><p></p>
+                        <li1>Luxury amenities with natural light</li1><p></p>
+                        <li1>Privacy walls</li1><p></p>
+                        <li1>Daycare included, or Day Stay is available for an additional fee</li1>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <section class="gradient2 py-6">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5 offset-md-1 text-black">
+                    <ul>
+                        <li1>Available for both dog and cat bookings</li1><p></p>
+                        <li1>100 square feet</li1><p></p>
+                        <li1>Queen sized memory foam bed</li1><p></p>
+                        <li1>42” HD flat screen TV per suite</li1><p></p>
+                        <li1>24/7 web cam access</li1><p></p>
+                        <li1>Luxury plush furnishings</li1><p></p>
+                        <li1>Room service 24/7</li1><p></p>
+                        <li1>Daycare included, or Day Stay is available for an additional fee</li1><p></p>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-15 text-center">
+                        <h3> Presidential </h3> <p> </p>
+                        <img src="https://www.poshpethotel.com/wp-content/uploads/2014/09/Presidential-2.jpg" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-black py-4 text-white">
+        <div class="container" style="text-align: center">
+            © 2017 Biscuits and Bath All rights reserved.
+            <p></p>
+            Privacy Policy - Cookies Policy
+        </div>
+    </footer>
+</head>
+<body>
+
+</body>
+</html>
